@@ -1,0 +1,381 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Mantenemos Montserrat para el cuerpo */
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+/* ===== HEADER TOP (barra negra) ===== */
+.header-top {
+    /* Color Principal: Azul Marino Profundo */
+    background-color: #1A2530;
+    color: #BDC3C7; /* Color Secundario: Plata / Gris Claro */
+    padding: 10px 20px;
+    text-align: right;
+    font-size: 0.9em;
+    /* Acento: Se usa Plata para el borde en lugar del antiguo dorado */
+    border-bottom: 2px solid #BDC3C7;
+}
+
+.header-top p {
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* ===== HEADER PRINCIPAL ===== */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    /* Acento: Blanco para el fondo */
+    background-color: #FFFFFF;
+    /* Sombra usando el Color Principal */
+    box-shadow: 0 2px 8px rgba(26, 37, 48, 0.1);
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.gallery-title h1 {
+    font-size: 1.8em;
+    /* ¡CAMBIO DE FUENTE! */
+    font-family: 'Oswald', sans-serif;
+    color: #1A2530;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gallery-title p {
+    font-size: 0.95em;
+    /* Color Secundario: Plata / Gris Claro (oscurecido ligeramente para mejor contraste) */
+    color: #88949D; 
+    margin: 5px 0 0 0;
+    font-style: italic;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.nav-menu-horizontal {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu-horizontal a {
+    text-decoration: none;
+    color: #1A2530;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* ¡CAMBIO DE FUENTE! */
+    font-family: 'Oswald', sans-serif;
+}
+
+.nav-menu-horizontal a:hover {
+    /* Color de hover: Color Secundario */
+    color: #BDC3C7;
+    /* Borde de hover: Color Principal */
+    border-bottom: 2px solid #1A2530;
+}
+
+
+.ubicacion-header {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.ubicacion-title {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    color: #1A2530;
+    margin-bottom: 20px;
+}
+
+#buscadorLocales {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.ubicacion-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.lista-locales ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.lista-locales li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.2s ease;
+}
+
+.lista-locales li:hover {
+    background-color: #f2f2f2;
+}
+
+.local-activo {
+    background-color: #dfe6ef;
+    font-weight: bold;
+}
+
+/* ===== MAPA DE GALERÍA ===== */
+.mapa-galeria {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.mapa-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Marcadores */
+.local-marker {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    transition: transform 0.2s ease;
+}
+
+.local-marker:hover {
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+.local-marker.activo {
+    background-color: #0077cc;
+}
+
+/* Popup de nombres */
+.popup-nombre {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: #0077cc;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.popup-nombre.show {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+.footer-gallery {
+    /* Color Principal: Azul Marino Profundo (Se usaba Negro) */
+    background-color: #1A2530;
+    /* Color Secundario: Plata / Gris Claro */
+    color: #BDC3C7;
+    margin-top: 60px;
+    /* Borde superior: Color Secundario */
+    border-top: 3px solid #BDC3C7;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 50px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    /* Color Secundario: Plata / Gris Claro (Se usaba dorado) */
+    color: #BDC3C7;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    margin: 10px 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.footer-section i {
+    /* Color Secundario: Plata / Gris Claro (Se usaba dorado) */
+    color: #BDC3C7;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.footer-logo-img {
+    width: 120px;
+    height: auto;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8em;
+}
+
+.social-links a {
+    /* Color Secundario: Plata / Gris Claro */
+    color: #BDC3C7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    /* Acento: Blanco para el hover */
+    color: #FFFFFF;
+    transform: scale(1.2);
+}
+
+/* Calificaciones */
+.rating-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rating-links a {
+    /* Color Secundario: Plata / Gris Claro */
+    color: #BDC3C7;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.rating-links a:hover {
+    /* Acento: Blanco para el hover */
+    color: #FFFFFF;
+}
+
+.rating-links i {
+    margin-right: 8px;
+}
+
+/* Contacto */
+
+
+
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    /* Borde superior: Color Principal (oscurecido, para un toque de contraste) */
+    border-top: 1px solid #0E161F; 
+    /* Fondo: Color Principal (oscurecido, para un toque de contraste) */
+    background-color: #101923; 
+    font-size: 0.9em;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.designer {
+    /* Acento: Blanco */
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .header-flex {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-menu-horizontal {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu-horizontal a {
+        font-size: 0.85em;
+    }
+
+    .gallery-title h1 {
+        font-size: 1.3em;
+    }
+
+    .promo-panel {
+        margin: 10px auto 40px;
+        padding: 25px 15px;
+    }
+
+    .promo-panel h2 {
+        font-size: 1.8em;
+    }
+
+    .promo-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .store-filter {
+        width: 100%;
+    }
+
+    .promos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .social-links {
+        font-size: 1.5em;
+    }
+}
