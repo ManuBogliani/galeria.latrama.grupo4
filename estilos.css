@@ -991,3 +991,32 @@ body {
 
 
 /*Estilos Buscar Locales*/
+
+/* Intro galeria */
+
+.intro-galeria {
+    text-align: center;
+}
+
+.intro-galeria .intro-text {
+    max-width: 900px;
+    margin: 30px auto;      /* separa del h2 y del video */
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.intro-galeria .intro-video-wrapper {
+    margin-top: 20px;
+}
+
+.promo-panel.locales h3.intro-text {
+    max-width: 900px !important;
+    margin: 40px auto !important; /* separación arriba y abajo */
+    padding: 0 20px;
+    display: block;
+    line-height: 1.7;
+}
+
+.promo-panel.locales .intro-video-wrapper {
+    margin-top: 35px !important;
+}
